@@ -1,1 +1,19 @@
-<%= link_to "Record Dream", new_dream_path %>
+<h1>DreamJournal</h1>
+<p>
+	<%= link_to "Record Dream", new_dream_path %>
+<p>
+	<% Dream.all.each do |dream| %>
+		<div>
+			<h2><%= dream.title %></h2>
+			<p>
+			<div><% if dream.content.length > 50 %>
+						<%= dream.content[0..50] + "..." %>
+					<% else %>
+						<%= dream.content %>
+					<% end %></div>
+			<div><%= link_to 'Show', dream %></div>
+			<div><%= link_to 'Edit', edit_dream_path(dream) %></div>
+			<div><%= link_to 'Forget', dream, method: :delete, data:
+				{ confirm: 'Are you sure you want to forget this dream?' } %></div>
+		</div>
+	<% end %>
