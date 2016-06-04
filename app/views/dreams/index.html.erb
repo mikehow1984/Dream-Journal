@@ -13,7 +13,7 @@
 					<% end %></div>
 			<div><%= link_to 'Show', dream %></div>
 			<div><%= link_to 'Edit', edit_dream_path(dream) %></div>
-			<div><%= link_to 'Forget', dream, method: :delete, data:
+			<div><%= link_to 'Forget', dream_path(dream), method: :delete, data:
 				{ confirm: 'Are you sure you want to forget this dream?' } %></div>
 		</div>
 	<% end %>

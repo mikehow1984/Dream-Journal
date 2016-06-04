@@ -1,2 +1,6 @@
 <h1><%= @dream.title %></h1>
+<%= link_to "Main Page", root_path %>
 <p><%= @dream.content %></p>
+<div><%= link_to 'Update', edit_dream_path(@dream) %></div>
+<div><%= link_to 'Forget', dream_path(@dream), method: :delete, data:
+	{ confirm: 'Are you sure you want to forget this dream?' } %></div>

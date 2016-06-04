@@ -1,0 +1,13 @@
+<%= form_for(@dream) do |f| %>
+	<p>
+		<%= f.label :title, "Dream Name" %><br>
+		<%= f.text_field :title, required: true %>
+	</p>
+
+	<p>
+		<%= f.label :content, "Your Dream" %><br>
+		<%= f.text_area :content, :rows => 10, :columns => 20, required: true %>
+	</p>
+
+	<%= f.submit %>
+<% end %>
